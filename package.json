@@ -163,5 +163,8 @@
     "proseWrap": "always",
     "singleQuote": true,
     "trailingComma": "all"
+  },
+  "dependencies": {
+    "postinstall-build": "^5.0.1"
   }
 }

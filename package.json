@@ -79,7 +79,7 @@
   },
   "scripts": {
     "build-clean": "rm -rf ./packages/*/build ./packages/*/build-es5",
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "yarn build && lerna bootstrap",
     "build": "node ./scripts/build.js",
     "clean-all": "rm -rf ./node_modules && rm -rf ./packages/*/node_modules && rm -rf ./integration-tests/*/*/node_modules && yarn build-clean",
     "jest": "node ./packages/jest-cli/bin/jest.js",

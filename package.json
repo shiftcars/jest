@@ -1,4 +1,6 @@
 {
+  "name": "shift-jest",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
     "ansi-regex": "^3.0.0",

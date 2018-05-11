@@ -77,6 +77,7 @@
   },
   "scripts": {
     "build-clean": "rm -rf ./packages/*/build ./packages/*/build-es5",
+    "bootstrap": "lerna bootstrap",
     "build": "node ./scripts/build.js",
     "clean-all": "rm -rf ./node_modules && rm -rf ./packages/*/node_modules && rm -rf ./integration-tests/*/*/node_modules && yarn build-clean",
     "jest": "node ./packages/jest-cli/bin/jest.js",
@@ -85,7 +86,7 @@
     "lint-es5-build": "eslint --no-eslintrc --no-ignore --env=browser packages/*/build-es5",
     "lint:md": "yarn --silent lint:md:ci --fix",
     "lint:md:ci": "prettylint '**/*.md' --ignore-path .gitignore",
-    "postinstall": "yarn build",
+    "postinstall": "postinstall-build dist --script bootstrap",
     "publish": "yarn build-clean && yarn build && lerna publish --silent",
     "test-ci-es5-build-in-browser": "karma start --single-run",
     "test-ci": "yarn typecheck && yarn lint && yarn lint-es5-build && yarn lint:md:ci && yarn jest-coverage -i --reporters jest-silent-reporter && yarn test-leak && node scripts/mapCoverage.js && codecov",
